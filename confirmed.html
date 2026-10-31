@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email confirmed</title>
+<meta name="description" content="Your Familily email address is confirmed." />
+<style>
+  :root { --fg:#16222E; --muted:#5B7085; --bg:#fff; --accent:#C93A48; --border:#e8edf2; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:40px 24px 96px; }
+  nav { font-size:15px; margin-bottom:32px; }
+  nav a { margin-right:16px; }
+  h1 { font-size:34px; margin-bottom:4px; }
+  h2 { font-size:24px; margin-top:48px; border-top:1px solid var(--border); padding-top:32px; }
+  h3 { font-size:19px; margin-top:28px; }
+  p, li { font-size:16px; color:#253543; }
+  a { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin:20px 0; font-size:15px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  hr { display:none; }
+  code { background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:14px; }
+  footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e6edf3; --muted:#9fb0c0; --bg:#0f1720; --accent:#ff7a85; --border:#24313f; }
+    p, li { color:#cfd9e3; } code { background:#1b2735; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><a href="./">Familily</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+<div id="ok">
+<h1>Email confirmed &#10003;</h1>
+<p>Thanks &mdash; your email address is confirmed.</p>
+<p><strong>Go back to the Familily app and log in</strong> with your email and password.</p>
+<p><a href="familily://" style="display:inline-block;padding:12px 20px;border-radius:8px;background:#BE3F69;color:#fff;text-decoration:none;font-weight:600">Open Familily</a></p>
+<p style="color:#5B7085;font-size:14px">If the button doesn't open the app, open Familily from your home screen yourself. You can close this page.</p>
+</div>
+<div id="problem" style="display:none">
+<h1>This link didn't work</h1>
+<p>It may have expired or already been used. If you've already confirmed your email, just open the Familily app and log in.</p>
+<p>Otherwise, open the app, try to log in, and ask for a new confirmation email.</p>
+</div>
+<script>
+(function () {
+  var q = location.search + '&' + location.hash.replace(/^#/, '');
+  if (/(^|[?&])(error|error_code|error_description)=/.test(q)) {
+    document.getElementById('ok').style.display = 'none';
+    document.getElementById('problem').style.display = 'block';
+  }
+})();
+</script>
+    <footer>Questions? <a href="mailto:hasibzaman.cse@gmail.com">hasibzaman.cse@gmail.com</a></footer>
+  </div>
+</body>
+</html>
